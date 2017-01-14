@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app='MsgApp'>
+  <head>
+    <script src="../common/angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <div ng-controller='MsgController'>
+      <div>
+        {{name}} has a message for you:
+        <div>
+          <button ng-click='feedMe()'>{{button}}</button>
+          <br/>
+          <!-- <using src instead of ng-src shows 404 in console/> -->
+          <!-- <img src="images/yaakov_{{stateOfBeing}}.png"/> -->
+          <img ng-src="images/yaakov_{{stateOfBeing}}.png"/>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
