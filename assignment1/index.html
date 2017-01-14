@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="../common/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Assignment 1</title>
+  </head>
+  <body ng-controller="MyCtrl">
+    <h1>Hello</h1>
+    <div>
+      Comma separated list of items:
+      <input type="text" ng-model="uinput">
+      <button ng-click="check();">Check</button>
+    </div>
+    <div>
+      {{output}}
+    </div>
+  </body>
+</html>
