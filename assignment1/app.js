@@ -9,8 +9,10 @@
 
     $scope.check = function() {
       var numItems = count($scope.uinput, ',');
+      $scope.buttonStyle = {"border-color": "green"};
       if (numItems == 0) {
         $scope.output = "Please enter data first"
+        $scope.buttonStyle = {"border-color": "red"};
       } else if (numItems <= 3) {
         $scope.output = "Enjoy!";
       } else {
