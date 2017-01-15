@@ -8,7 +8,10 @@
     $scope.output = "";
 
     $scope.check = function() {
-      if (count($scope.uinput, ',') <= 3) {
+      var numItems = count($scope.uinput, ',');
+      if (numItems == 0) {
+        $scope.output = "Please enter data first"
+      } else if (numItems <= 3) {
         $scope.output = "Enjoy!";
       } else {
         $scope.output = "Too Much!";
