@@ -24,8 +24,10 @@
       var count = 0
       var list = str.split(dl);
       for (var i = 0; i < list.length; i++) {
-        if (list[i].length > 0) count += 1;
+        if (list[i].trim().length > 0) count += 1;
       }
+      console.log(list);
+      console.log(list.filter(String));
       return count;
     }
   }
