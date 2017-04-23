@@ -1,6 +1,6 @@
 // IIFE - immediately invoked function expression
 (function () {
-'use sctrict';
+'use strict';
 
   // define app
   angular.module('myFirstApp', [])
