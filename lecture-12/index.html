@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="MsgApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="../common/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Expressions and Interpolation</title>
+  </head>
+  <body>
+    <h1>Expressions and Interpolation</h1>
+    <div ng-controller="MsgController">
+      Message is: <br>
+      {{name}} <br>
+      {{sayMessage()}}
+      {{jfjhg}} <!-- Will not throw error -->
+      <div>
+        <button ng-click="feed()">{{stateOfBeing}}</button>
+        <!-- filters can be applied like this as well -->
+        Cost: {{cookieCost | currency : "#blah" : 4}}
+        <br/>
+        <img ng-src="yaakov_{{stateOfBeing}}.png"/>
+      </div>
+    </div>
+  </body>
+</html>
