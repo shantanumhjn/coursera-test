@@ -3,10 +3,12 @@
 
   angular.module("MsgApp", [])
     .controller("MsgController", MsgController)
-    .filter("loves", LovesFilter); // add the custom filter to the module
+    .filter("loves", LovesFilter) // add the custom filter to the module
+    .filter("truth", TruthFilter); // not using inside javascript, so no injection needed
 
   // inject the custom filter, "Filter" will be appended
   // to the keyword used while registering
+  // in html use the same name, in javascript append "Filter"
   MsgController.$inject = ["$scope", "$filter", "lovesFilter"];
   // instead of service, the exact method is passed as argument wrt custom filters
   function MsgController(scope, filter, lovesFilter) {
@@ -43,6 +45,14 @@
     return function (input) {
       input = input || "";
       input = input.replace("like", "love");
+      return input;
+    };
+  }
+
+  function TruthFilter() {
+    return function (input, target, replace) {
+      input = input || "";
+      input = input.replace(target, replace);
       return input;
     };
   }
