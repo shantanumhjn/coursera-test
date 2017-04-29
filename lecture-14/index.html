@@ -13,7 +13,13 @@
       <button ng-click="showNumberOfWatchers()">Log # of watchers</button>
       <!-- this also creates a watcher automatically -->
       <!-- the digest cycle is fired with key press -->
-      <input ng-model="name">
+      <input ng-model="name"/>
+      <!--
+        interpolations "{{}}" will always create their own watcher
+        specially because it might be an expression that needs updation
+        eg here the "!"
+      -->
+      {{ name + "!" }}
       <div>
         <button ng-click="countOnce()">Up Once Counter (once)</button>
         <button ng-click="upCounter()">Increment Counter</button>
