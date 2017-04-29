@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="CounterApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="../common/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <title>ng-repeat</title>
+  </head>
+  <body>
+    <h1>The Digest Cycle</h1>
+    <div ng-controller="CounterController">
+      <div>
+        <button ng-click="upCounter()">Increment Counter with js timeout</button>
+      </div>
+      <div>
+        <button ng-click="upCounter1()">Increment Counter with angular $apply</button>
+      </div>
+      <div>
+        <button ng-click="upCounter2()">Increment Counter with angular timeout</button>
+      </div>
+        Regular counter: {{ counter }}
+      </div>
+    </div>
+  </body>
+</html>
