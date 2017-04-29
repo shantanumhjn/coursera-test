@@ -11,9 +11,11 @@
     <div ng-controller="ShoppingListController">
       <!-- Shopping list #1 -->
       <h3>Shopping List:</h3>
+      <input type="text" ng-model="search">
       <ul>
         <!-- construct to loop over an array -->
-        <li ng-repeat="item in shoppingList1">{{ item }}</li>
+        <!-- filter is an inbuilt filter -->
+        <li ng-repeat="item in shoppingList1 | filter : search">{{ item }}</li>
       </ul>
 
       <!-- Shopping list #2 -->
