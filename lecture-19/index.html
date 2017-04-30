@@ -12,11 +12,13 @@
         <div ng-controller="ChildController1">
         </div>
       </div>
-      <!-- <div ng-controller="ParentController2 as parent">
+      <!-- The As syntax adds the function to the scope as the alias used -->
+      <div ng-controller="ParentController2 as parent">
         Parent value: {{ parent.value }}
         <div ng-controller="ChildController2 as child">
           Child value: {{ child.value }}
+          Parent value: {{ parent.value }}
         </div>
-      </div> -->
+      </div>
   </body>
 </html>
