@@ -22,7 +22,13 @@
           <button ng-click="list.removeItem($index);">Remove Item</button>
         </li>
       </ol>
-      <div class="error">Error: {{list.errorMessage}}</div>
+      <!-- show only if true -->
+      <!-- ng-if removes from DOM -->
+      <div ng-if="list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
+      <!-- ng-show does not remove but hides it by attaching CSS classes-->
+      <div ng-show="list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
+      <!-- ng-hide is opposite of ng-show -->
+      <div ng-hide="!list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
     </div>
 
   </body>
