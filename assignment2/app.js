@@ -40,21 +40,21 @@
     }
 
     // The lists to hold the items
-    this.toBuy = initToBuyList();
-    this.bought = [];
+    var toBuy = initToBuyList();
+    var bought = [];
 
     this.getToBuyItems = function () {
-      return this.toBuy;
+      return toBuy;
     };
 
     this.getBoughtItems = function () {
-      return this.bought;
+      return bought;
     };
 
     this.buyItem= function (itemIdx) {
-      var item = this.toBuy[itemIdx];
-      this.bought.push(item);
-      this.toBuy.splice(itemIdx, 1);
+      var item = toBuy[itemIdx];
+      bought.push(item);
+      toBuy.splice(itemIdx, 1);
     };
   }
 })();
