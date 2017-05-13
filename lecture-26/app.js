@@ -15,6 +15,7 @@ angular.module('ShoppingListDirectiveApp', [])
 // can be attributes or elements
 function ListItem() {
   var ddo = {
+    restrict: "E", // can be both, element and attribute
     templateUrl: 'listItem.html'
   };
 
