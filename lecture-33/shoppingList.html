@@ -1,0 +1,12 @@
+<h3>Title: {{ $ctrl.myTitle }}</h3>
+<ol>
+  <!-- angular creates a default alias $ctrl in components-->
+  <li ng-repeat="item in $ctrl.items">
+    {{ item.quantity }} of {{ item.name }}
+    <button ng-click="$ctrl.remove($index);">Remove Item</button>
+  </li>
+</ol>
+<div class="error">WARNING! WARNING! COOKIES DETECTED!</div>
+<!--
+<div class="error" ng-if="$ctrl.cookiesInList()">WARNING! WARNING! COOKIES DETECTED!</div>
+-->
