@@ -13,8 +13,9 @@ function ShoppingList() {
     templateUrl: 'shoppingList.html',
     // local property in the directive called list will get value from
     // attribute called my-list
+    // = sign means 2 way binding, @ is text binding?, < one way binding
     scope: {
-      list: '=myList', // = sign means 2 way binding, @ 1 way binding
+      list: '=myList',
       title: '@title'
     }
   };
