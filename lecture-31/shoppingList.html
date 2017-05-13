@@ -5,4 +5,5 @@
     <button ng-click="list.onRemove({index: $index});">Remove Item</button>
   </li>
 </ol>
-<div class="error">OH THE HORROR! COOKIES DETECTED!</div>
+<!-- using ng-transclude attribute to speicify where the content needs to go -->
+<div class="error" ng-transclude></div>

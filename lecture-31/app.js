@@ -18,7 +18,9 @@ function ShoppingListDirective() {
     controller: ShoppingListDirectiveController,
     controllerAs: 'list',
     bindToController: true,
-    link: ShoppingListDirectiveLink
+    link: ShoppingListDirectiveLink,
+    // using this we displayed properties from the parent scope
+    transclude: true
   };
 
   return ddo;
@@ -93,6 +95,8 @@ function ShoppingListController(ShoppingListFactory) {
   viewList.items = shoppingList.getItems();
   var origTitle = "Shopping List #1";
   viewList.title = origTitle + " (" + viewList.items.length + " items )";
+
+  viewList.warning = "COOKIES DETENCTED!";
 
   viewList.itemName = "";
   viewList.itemQuantity = "";
