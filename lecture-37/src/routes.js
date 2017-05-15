@@ -43,6 +43,25 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       }],
       // items2 : "hello"
     }
+  })
+
+  // passing data through url
+  // surround param in {} in url prop
+  // $stateParams contains all the params
+  .state("itemDetail", {
+    url: '/item-detail/{itemId}',
+    templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
+    controller: 'ItemDetailController as itemdetail',
+    resolve: {
+      item: ['$stateParams', 'ShoppingListService',
+              function ($stateParams, ShoppingListService) {
+                return ShoppingListService.getItems()
+                  .then(function (items) {
+                    return items[$stateParams.itemId]
+                  });
+              }
+            ]
+    }
   });
 }
 
