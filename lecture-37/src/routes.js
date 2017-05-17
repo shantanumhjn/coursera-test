@@ -48,19 +48,17 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // passing data through url
   // surround param in {} in url prop
   // $stateParams contains all the params
-  .state("itemDetail", {
-    url: '/item-detail/{itemId}',
+  // will make this view a child of the list view
+  // as a child view, we dont need to add resolve property again.
+  // we can directly inject it
+  .state("mainList.itemDetail", {
     templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
     controller: 'ItemDetailController as itemdetail',
-    resolve: {
-      item: ['$stateParams', 'ShoppingListService',
-              function ($stateParams, ShoppingListService) {
-                return ShoppingListService.getItems()
-                  .then(function (items) {
-                    return items[$stateParams.itemId]
-                  });
-              }
-            ]
+    // url: '/item-detail/{itemId}',
+    // dont have to specify url, instead we can use params
+    //property, which is an object, each param will need to be initialised
+    params: {
+      itemId: null
     }
   });
 }
