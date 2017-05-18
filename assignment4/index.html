@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Welcome to our Restaurant</title>
+  </head>
+  <body ng-app="MenuApp">
+    <!-- <h1>Welcome to our Restaurant</h1> -->
+
+    <state-change></state-change>
+    <ui-view></ui-view>
+
+    <!-- lib -->
+    <script src='lib/angular.min.js'></script>
+    <script src='lib/angular-ui-router.min.js'></script>
+
+    <!-- modules artifacts -->
+    <script src='src/menu/menuapp.module.js'></script>
+    <script src='src/data/data.module.js'></script>
+    <script src='src/statechange/statechange.module.js'></script>
+
+    <!-- Routes -->
+    <script src='src/routes.js'></script>
+
+    <!-- menu artifacts -->
+    <script src=''></script>
+    <script src='src/menu/categories.controller.js'></script>
+    <script src='src/menu/categories.component.js'></script>
+    <script src='src/menu/items.controller.js'></script>
+    <script src='src/menu/items.component.js'></script>
+
+    <!-- data artifacts -->
+    <script src='src/data/menudata.service.js'></script>
+
+    <!-- state change artifacts -->
+    <script src='src/statechange/statechange.component.js'></script>
+
+  </body>
+</html>
