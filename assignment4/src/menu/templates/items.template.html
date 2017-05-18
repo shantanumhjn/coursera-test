@@ -1,5 +1,27 @@
-<ul>
+<!-- <ul>
   <li ng-repeat="item in $ctrl.items">
     {{ item.name }} - ${{item.price_large}}
   </li>
-</ul>
+</ul> -->
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th class="name">Item Name</th>
+        <th class="price">Price (Large)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in $ctrl.items"
+          ng-mouseover="$ctrl.replace($index)"
+          ng-mouseleave="$ctrl.replace($index)">
+        <td class"name">{{item.name}}</td>
+        <td class="price">{{item.price_large | currency : '$ ': 2}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="info">
+  {{$ctrl.description}}
+</div>
