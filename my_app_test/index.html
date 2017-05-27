@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello</title>
+  </head>
+  <body ng-app="MyApp">
+    <h1>Hello</h1>
+    <div ng-controller="MyAppController as ctrl">
+      <input type="text" ng-model="ctrl.pnr"></input>
+      <button ng-click="ctrl.getStatus()">Get PNR Status</button>
+      <br>
+      <ul>
+        <li ng-repeat="p in ctrl.passengers">
+          {{p.bookingStatus}} -> {{p.currentStatus}}
+        </li>
+      </ul>
+      <br>
+      {{ctrl.errorMsg}}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
