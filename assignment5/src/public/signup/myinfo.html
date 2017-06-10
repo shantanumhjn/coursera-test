@@ -1,0 +1,15 @@
+<div class="container">
+  <div ng-if="myinfoCtrl.user">
+    <h2>Welcome {{myinfoCtrl.user.firstName + " " + myinfoCtrl.user.lastName}}</h2>
+    <h4>Email: {{myinfoCtrl.user.email}}</h4>
+    <h4>Phone: {{myinfoCtrl.user.phone}}</h4>
+    <h4>Favourite Item: {{myinfoCtrl.user.favItem.name}}</h4>
+    <img class="img-responsive" ng-src="{{myinfoCtrl.apiPath}}/images/{{myinfoCtrl.user.favItem.short_name}}.jpg" alt="{{myinfoCtrl.user.favItem.name}}">
+    <br>
+    {{myinfoCtrl.user.favItem.description}}
+  </div>
+  <div ng-if="!myinfoCtrl.user">
+    Not Signed Up Yet.
+    <a href="#" ui-sref="public.signup">Sign up Now!</a>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <form id="signup" name="signupForm" novalidate>
+    First Name:
+    <input type="text"
+           name="firstName"
+           placeholder="First Name"
+           ng-model="signupCtrl.user.firstName"
+           required>
+    <br>
+    Last Name:
+    <input type="text"
+           name="lastName"
+           placeholder="Last Name"
+           ng-model="signupCtrl.user.lastName"
+           required>
+    <br>
+    Email:
+    <input type="email"
+           name="email"
+           placeholder="Email Address"
+           ng-model="signupCtrl.user.email"
+           required>
+    <br>
+    Favourite Item:
+    <input type="text"
+           name="favItem"
+           placeholder="Favourite Item"
+           ng-model="signupCtrl.user.favItem.short_name"
+           required>
+    <span>{{signupCtrl.favItemError}}</span>
+    <br>
+    <button ng-disabled="signupForm.$invalid"
+            ng-click="signupCtrl.go()">
+      Submit
+    </button>
+  </form>
+  {{signupCtrl.success}}
+</div>
