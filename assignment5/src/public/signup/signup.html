@@ -20,14 +20,31 @@
            placeholder="Email Address"
            ng-model="signupCtrl.user.email"
            required>
+    <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+      Email must be of the format handle@domain.
+    </span>
+    <br>
+    Phone:
+    <input type="text"
+           name="phone"
+           placeholder="###-###-####"
+           ng-model="signupCtrl.user.phone"
+           required
+           pattern="(\d{3})-(\d{3})-(\d{4})">
+    <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+      Phone must be in the format ###-###-####.
+    </span>
     <br>
     Favourite Item:
     <input type="text"
            name="favItem"
            placeholder="Favourite Item"
            ng-model="signupCtrl.user.favItem.short_name"
-           required>
-    <span>{{signupCtrl.favItemError}}</span>
+           required
+           valid-item
+           ng-model-options="{ debounce: 500 }">
+    <span ng-show="signupForm.favItem.$error.validItem">{{signupCtrl.favItemError}}</span>
+    <span ng-show="signupForm.favItem.$pending.validItem">{{signupCtrl.fetchItemMsg}}</span>
     <br>
     <button ng-disabled="signupForm.$invalid"
             ng-click="signupCtrl.go()">

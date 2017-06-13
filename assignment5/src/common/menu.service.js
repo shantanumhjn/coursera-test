@@ -27,11 +27,21 @@ function MenuService($http, ApiPath) {
     });
   };
 
-  service.itemExists = function (item_short_name) {
+  service.getItem = function(item_short_name) {
     var item_url = item_short_name + ".json";
     return $http.get(ApiPath + '/menu_items/' + item_url).then(function (response) {
-          return response.data;
+      return response.data;
     });
+  }
+
+  service.itemExists = function (item_short_name) {
+    return service.getItem(item_short_name)
+      .then(function (response) {
+        return response;
+      })
+      .catch(function (response) {
+        return undefined;
+      });
   };
 
 }
